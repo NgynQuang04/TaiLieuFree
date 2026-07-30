@@ -7,7 +7,7 @@ const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyIkKrQ
 
 // Link tải bộ tài liệu (Google Drive, Dropbox...) sẽ hiện ra
 // cho khách ngay sau khi họ đăng ký thành công.
-const DOCUMENT_DOWNLOAD_URL = "https://drive.google.com/file/d/1Nw77Ad9Gi6gqcch8rFzNPpk9ajDudCQl/view?usp=sharing";
+const DOCUMENT_DOWNLOAD_URL = "https://drive.google.com/file/d/1Nw77Ad9Gi6gqcch8rFzNPpk9ajDudCQl/view?usp=drive_link";
 
 
 /*==========================
@@ -80,10 +80,6 @@ form.addEventListener("submit", function (e) {
 
     const phone = form.phone.value.trim();
 
-    const telegram = form.telegram.value.trim();
-
-    const email = form.email.value.trim();
-
     if (name === "") {
 
         message.style.color = "red";
@@ -127,10 +123,6 @@ form.addEventListener("submit", function (e) {
     payload.append("name", name);
 
     payload.append("phone", phone);
-
-    payload.append("telegram", telegram);
-
-    payload.append("email", email);
 
     payload.append("source", "GitHub Pages - LADO Capital");
 
