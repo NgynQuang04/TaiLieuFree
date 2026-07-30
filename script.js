@@ -1,12 +1,13 @@
 /*==========================
     CONFIG
-
-    Dán URL Web App bạn nhận được sau khi
-    Deploy Google Apps Script (xem file
-    google-apps-script.gs) vào đây.
 ==========================*/
 
-const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
+// Link Web App Google Apps Script (đã lưu form vào Google Sheet)
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyIkKrQwL3frev2NSXuxjaRQI6paHsT1YQOGtqcPpaXtbj4gYfdfGhwFcV330WIAtuf/exec";
+
+// Link tải bộ tài liệu (Google Drive, Dropbox...) sẽ hiện ra
+// cho khách ngay sau khi họ đăng ký thành công.
+const DOCUMENT_DOWNLOAD_URL = "https://drive.google.com/file/d/1Nw77Ad9Gi6gqcch8rFzNPpk9ajDudCQl/view?usp=sharing";
 
 
 /*==========================
@@ -155,7 +156,11 @@ form.addEventListener("submit", function (e) {
 
         message.style.color = "#198754";
 
-        message.innerHTML = "✅ Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.";
+        message.innerHTML =
+            "✅ Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.<br>" +
+            "<a href=\"" + DOCUMENT_DOWNLOAD_URL + "\" target=\"_blank\" rel=\"noopener\" class=\"download-link\">" +
+            "📥 Bấm vào đây để tải bộ tài liệu" +
+            "</a>";
 
         form.reset();
 
