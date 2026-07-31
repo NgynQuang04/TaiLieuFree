@@ -554,19 +554,19 @@ GALLERY
 
     gap:25px;
 
+    align-items:center;
+
 }
 
 .gallery img{
 
-    border-radius:18px;
+    width:100%;
 
-    height:260px;
+    border-radius:18px;
 
     object-fit:contain;
 
     background:white;
-
-    padding:12px;
 
     cursor:pointer;
 
@@ -574,13 +574,37 @@ GALLERY
 
     box-shadow:0 10px 30px rgba(0,0,0,.1);
 
-    border:1px solid rgba(11,36,80,.06);
-
 }
 
 .gallery img:hover{
 
-    transform:scale(1.04);
+    transform:scale(1.03);
+
+}
+
+/* ảnh ngang (VD chụp màn hình Zoom Meeting) */
+.gallery-landscape{
+
+    height:260px;
+
+    padding:12px;
+
+    border:1px solid rgba(11,36,80,.06);
+
+}
+
+/* ảnh dọc (chụp màn hình điện thoại) — to hơn, có khung kiểu bezel điện thoại, canh giữa cột */
+.gallery-portrait{
+
+    height:480px;
+
+    max-width:280px;
+
+    margin:0 auto;
+
+    padding:16px 10px;
+
+    border:5px solid #0B2450;
 
 }
 
@@ -1038,13 +1062,21 @@ padding:26px;
 
 grid-template-columns:1fr;
 
-gap:16px;
+gap:20px;
 
 }
 
-.gallery img{
+.gallery-landscape{
 
 height:220px;
+
+}
+
+.gallery-portrait{
+
+height:740px;
+
+max-width:520px;
 
 }
 
