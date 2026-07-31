@@ -7,7 +7,7 @@ const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyIkKrQ
 
 // Link tải bộ tài liệu (Google Drive, Dropbox...) sẽ hiện ra
 // cho khách ngay sau khi họ đăng ký thành công.
-const DOCUMENT_DOWNLOAD_URL = "https://drive.google.com/file/d/1Nw77Ad9Gi6gqcch8rFzNPpk9ajDudCQl/view?usp=drive_link";
+const DOCUMENT_DOWNLOAD_URL = "https://drive.google.com/file/d/1Nw77Ad9Gi6gqcch8rFzNPpk9ajDudCQl/view?usp=sharing";
 
 
 /*==========================
@@ -27,6 +27,37 @@ window.addEventListener("scroll", () => {
         header.classList.remove("active");
 
     }
+
+});
+
+
+/*==========================
+    MOBILE NAV (hamburger)
+==========================*/
+
+const navToggle = document.getElementById("navToggle");
+
+const mainNav = document.getElementById("mainNav");
+
+navToggle.addEventListener("click", () => {
+
+    navToggle.classList.toggle("open");
+
+    mainNav.classList.toggle("open");
+
+});
+
+// Bấm chọn một mục thì tự đóng menu lại
+
+mainNav.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navToggle.classList.remove("open");
+
+        mainNav.classList.remove("open");
+
+    });
 
 });
 
