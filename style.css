@@ -153,6 +153,65 @@ nav a:hover{
 
 }
 
+/* Hamburger — chỉ hiện trên di động */
+#navToggle{
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:5px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    padding:0;
+
+}
+
+#navToggle span{
+
+    display:block;
+
+    width:26px;
+
+    height:3px;
+
+    border-radius:3px;
+
+    background:#14356E;
+
+    transition:.3s;
+
+}
+
+#navToggle.open span:nth-child(1){
+
+    transform:translateY(8px) rotate(45deg);
+
+}
+
+#navToggle.open span:nth-child(2){
+
+    opacity:0;
+
+}
+
+#navToggle.open span:nth-child(3){
+
+    transform:translateY(-8px) rotate(-45deg);
+
+}
+
 /*=========================
     HERO — navy/orange diagonal split, like the poster
 =========================*/
@@ -655,6 +714,34 @@ REGISTER — same navy field as the hero, with a matching dot accent
 
 }
 
+.download-link{
+
+    display:inline-block;
+
+    margin-top:14px;
+
+    padding:14px 28px;
+
+    background:#F26522;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.download-link:hover{
+
+    background:#D84E12;
+
+}
+
 /*=========================
 FOOTER
 =========================*/
@@ -759,21 +846,105 @@ grid-template-columns:1fr;
 
 @media(max-width:768px){
 
-nav{
+/* Header: logo + hamburger, menu đầy đủ thu vào bảng thả xuống */
+
+header .container{
+
+padding:14px 0;
+
+}
+
+.logo img{
+
+height:44px;
+
+}
+
+.btn-header{
 
 display:none;
 
 }
 
+#navToggle{
+
+display:flex;
+
+}
+
+nav#mainNav{
+
+position:fixed;
+
+top:72px;
+
+left:0;
+
+width:100%;
+
+max-height:0;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.98);
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 12px 25px rgba(0,0,0,.12);
+
+transition:max-height .35s ease;
+
+}
+
+nav#mainNav.open{
+
+max-height:400px;
+
+}
+
+nav#mainNav ul{
+
+flex-direction:column;
+
+gap:0;
+
+padding:10px 0;
+
+}
+
+nav#mainNav li{
+
+border-top:1px solid rgba(20,53,110,.08);
+
+}
+
+nav#mainNav li:first-child{
+
+border-top:none;
+
+}
+
+nav#mainNav a{
+
+display:block;
+
+padding:16px 24px;
+
+}
+
+/* Hero */
+
 .hero{
 
-padding:120px 0 80px;
+min-height:auto;
+
+padding:110px 0 70px;
 
 }
 
 .hero h1{
 
-font-size:34px;
+font-size:32px;
 
 }
 
@@ -797,15 +968,19 @@ width:75px;
 
 }
 
-.section-title h2{
+.hero-buttons{
 
-font-size:30px;
+flex-direction:column;
+
+width:100%;
 
 }
 
-.btn-header{
+.hero-buttons a{
 
-display:none;
+width:100%;
+
+text-align:center;
 
 }
 
@@ -814,6 +989,136 @@ display:none;
 width:70px;
 
 height:70px;
+
+}
+
+/* Sections: giảm khoảng đệm cho màn hình nhỏ */
+
+section{
+
+padding:56px 0;
+
+}
+
+.section-title{
+
+margin-bottom:36px;
+
+}
+
+.section-title h2{
+
+font-size:26px;
+
+}
+
+/* Feature cards, gallery: 1 cột, gọn hơn */
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+gap:18px;
+
+}
+
+.card{
+
+padding:26px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+gap:16px;
+
+}
+
+.gallery img{
+
+height:220px;
+
+}
+
+/* Form đăng ký */
+
+.right{
+
+padding:24px;
+
+}
+
+.right input,
+.right button{
+
+font-size:16px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.container{
+
+width:92%;
+
+}
+
+.hero h1{
+
+font-size:26px;
+
+}
+
+.badge{
+
+font-size:12px;
+
+padding:7px 14px;
+
+}
+
+.hero-badge-ring{
+
+width:92px;
+
+height:92px;
+
+border-width:4px;
+
+}
+
+.hero-logo{
+
+width:62px;
+
+}
+
+.section-title h2{
+
+font-size:22px;
+
+}
+
+.btn-primary,
+.btn-outline{
+
+padding:14px 24px;
+
+}
+
+#backToTop{
+
+width:46px;
+
+height:46px;
+
+right:16px;
+
+bottom:16px;
 
 }
 
